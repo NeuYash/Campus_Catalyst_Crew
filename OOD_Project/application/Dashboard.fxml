@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardController">
+   <children>
+      <AnchorPane fx:id="main_form" maxWidth="-Infinity" prefHeight="568.0" prefWidth="1005.0" stylesheets="@application.css">
+         <children>
+            <BorderPane prefHeight="568.0" prefWidth="893.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="54.0" prefWidth="893.0" styleClass="semi-top-form" stylesheets="@application.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="125.0" layoutY="-76.0" prefHeight="54.0" prefWidth="893.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIconView glyphName="GRADUATION_CAP" layoutX="28.0" layoutY="37.0" size="2em" />
+                              <Label layoutX="69.0" layoutY="14.0" text="University Management ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="839.0" layoutY="16.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="26.0" styleClass="close" stylesheets="@application.css" />
+                              <Button layoutX="800.0" layoutY="16.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="28.0" styleClass="minimize" stylesheets="@application.css" />
+                              <FontAwesomeIconView fx:id="close" glyphName="CLOSE" layoutX="847.0" layoutY="33.0" selectionEnd="0" />
+                              <FontAwesomeIconView fx:id="minimize" glyphName="MINUS" layoutX="808.0" layoutY="33.0" text="" wrappingWidth="23.828596115112305" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="521.0" prefWidth="200.0" styleClass="nav-form" stylesheets="@application.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label layoutX="58.0" layoutY="114.0" text="Welcome" textFill="#f8f8f8">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="4.0" layoutY="174.0" prefWidth="200.0" />
+                        <Button fx:id="home_btn" layoutX="38.0" layoutY="359.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="25.0" prefWidth="112.0" styleClass="nav-btn" stylesheets="@application.css" text="Dashboard" />
+                        <Button fx:id="addStudents_btn" layoutX="40.0" layoutY="223.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="25.0" prefWidth="110.0" styleClass="nav-btn" stylesheets="@application.css" text="Enroll Students" />
+                        <Button fx:id="availablecourses_btn" layoutX="39.0" layoutY="268.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="25.0" prefWidth="114.0" styleClass="nav-btn" stylesheets="@application.css" text="Manage Courses" />
+                        <Button fx:id="studentGrade_btn" layoutX="39.0" layoutY="314.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="25.0" prefWidth="113.0" styleClass="nav-btn" text="Transcripts" />
+                        <Button fx:id="logout" layoutX="38.0" layoutY="458.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="111.0" styleClass="nav-btn" stylesheets="@application.css" text="Signout " />
+                        <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="50.0" layoutY="476.0" />
+                        <Label fx:id="username" layoutX="71.0" layoutY="138.0" prefHeight="20.0" prefWidth="76.0" text="Admin" textFill="#f8f8f8">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="39.0" layoutY="46.0" text="Northeastern" textFill="#f7f7f7">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="61.0" layoutY="76.0" text="University" textFill="#f6f6f6">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="520.0" prefWidth="690.0" stylesheets="@application.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="home_form" layoutX="8.0" layoutY="6.0" prefHeight="490.0" prefWidth="668.0" stylesheets="@application.css">
+                           <children>
+                              <AnchorPane layoutX="-1.0" prefHeight="151.0" prefWidth="669.0" stylesheets="@application.css">
+                                 <children>
+                                    <AnchorPane layoutX="7.0" layoutY="9.0" prefHeight="136.0" prefWidth="210.0" styleClass="nav-form">
+                                       <children>
+                                          <Label layoutX="54.0" layoutY="36.0" text="Total Students" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font></Label>
+                                          <Label fx:id="home_totalEnrolled" layoutX="89.0" layoutY="78.0" prefHeight="17.0" prefWidth="54.0" text="0" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font></Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="230.0" layoutY="8.0" prefHeight="136.0" prefWidth="210.0" styleClass="nav-form" stylesheets="@application.css" />
+                                    <AnchorPane layoutX="453.0" layoutY="10.0" prefHeight="136.0" prefWidth="210.0" styleClass="nav-form" />
+                                    <Label layoutX="247.0" layoutY="44.0" text="Enrolled Female Students" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <Label fx:id="home_totalFemale" layoutX="323.0" layoutY="88.0" prefHeight="17.0" prefWidth="54.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font></Label>
+                                    <Label layoutX="480.0" layoutY="43.0" text="Enrolled Male Students" textFill="#fcfcfc">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <Label fx:id="home_totalMale" layoutX="549.0" layoutY="88.0" prefHeight="17.0" prefWidth="54.0" text="0" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font></Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="14.0" layoutY="160.0" prefHeight="315.0" prefWidth="308.0">
+                                 <children>
+                                    <BarChart fx:id="home_totalEnrolledChart" layoutX="-13.0" prefHeight="315.2" prefWidth="308.0" title="Total Students" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                             
+                              <!--  -->
+                              <AnchorPane layoutX="334.0" layoutY="160.0" prefHeight="143.0" prefWidth="330.0">
+                                 <children>
+                                    <AreaChart fx:id="home_totalFemaleChart" layoutX="-3.0" prefHeight="150.0" prefWidth="330.0" title="Enrolled Female Students" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </AreaChart>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="322.0" layoutY="315.0" prefHeight="159.0" prefWidth="330.0">
+                                 <children>
+                                    <AreaChart fx:id="home_totalMaleChart" layoutX="6.0" prefHeight="253.2" prefWidth="396.0" title="Enrolled Male Students" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </AreaChart>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="addStudents_form" layoutX="119.0" layoutY="101.0" prefHeight="502.8" prefWidth="689.2" stylesheets="@application.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="482.0" prefWidth="666.0">
+                                 <children>
+                                    <Label layoutX="20.0" layoutY="221.0" text="Student #:" />
+                                    <TextField fx:id="addStudents_studentNum" layoutX="93.0" layoutY="220.0" prefHeight="25.0" prefWidth="172.0" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="47.0" layoutY="261.0" text="Year:" />
+                                    <ComboBox fx:id="addStudents_year" layoutX="93.0" layoutY="257.0" onAction="#addStudentsYearList" prefHeight="25.0" prefWidth="171.0" promptText="Choose" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="27.0" layoutY="299.0" text="Course:" />
+                                    <ComboBox fx:id="addStudents_course" layoutX="93.0" layoutY="295.0" onAction="#addStudentsCourseList" prefHeight="25.0" prefWidth="171.0" promptText="Choose" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="331.0" layoutY="230.0" text="First Name:" />
+                                    <TextField fx:id="addStudents_firstName" layoutX="409.0" layoutY="223.0" prefHeight="25.0" prefWidth="172.0" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="331.0" layoutY="272.0" text="Last Name:" />
+                                    <TextField fx:id="addStudents_lastName" layoutX="409.0" layoutY="265.0" prefHeight="25.0" prefWidth="172.0" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="338.0" layoutY="314.0" text="Gender:" />
+                                    <ComboBox fx:id="addStudents_gender" layoutX="409.0" layoutY="307.0" onAction="#addStudentsGenderList" prefHeight="25.0" prefWidth="171.0" promptText="Choose" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="338.0" layoutY="356.0" text="Birth Date:" />
+                                    <DatePicker fx:id="addStudents_birth" layoutX="408.0" layoutY="349.0" prefHeight="25.0" prefWidth="173.0" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="338.0" layoutY="391.0" text="Status:" />
+                                    <ComboBox fx:id="addStudents_status" layoutX="409.0" layoutY="384.0" onAction="#addStudentsStatusList" prefHeight="25.0" prefWidth="171.0" promptText="Choose" styleClass="textfield" stylesheets="@application.css" />
+                                    <AnchorPane layoutX="138.0" layoutY="335.0" prefHeight="149.0" prefWidth="120.0">
+                                       <children>
+                                          <ImageView fx:id="addStudents_imageView" fitHeight="149.0" fitWidth="120.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="addStudents_insertBtn" layoutX="26.0" layoutY="121.0" mnemonicParsing="false" onAction="#addStudentsInsertImage" prefHeight="27.0" prefWidth="62.0" styleClass="insert-btn" stylesheets="@application.css" text="Insert" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Button fx:id="addStudents_addBtn" layoutX="300.0" layoutY="435.0" mnemonicParsing="false" onAction="#addStudentsAdd" styleClass="delete-btn" stylesheets="@application.css" text="Add" />
+                                    <Button fx:id="addStudents_updateBtn" layoutX="366.0" layoutY="435.0" mnemonicParsing="false" onAction="#addStudentsUpdate" styleClass="delete-btn" text="Update" />
+                                    <Button fx:id="addStudents_deleteBtn" layoutX="447.0" layoutY="435.0" mnemonicParsing="false" onAction="#addStudentsDelete" styleClass="delete-btn" text="Delete" />
+                                    <Button fx:id="addStudents_clearBtn" layoutX="519.0" layoutY="435.0" mnemonicParsing="false" onAction="#addStudentsClear" styleClass="delete-btn" text="Clear" />
+                                    <Button fx:id="addStudents_downloadBtn" layoutX="580.0" layoutY="435.0" mnemonicParsing="false" onAction="#addStudentsDownload" styleClass="delete-btn" text="Download" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="25.0" prefWidth="116.0">
+                                 <children>
+                                    <TableView fx:id="addStudents_tableView" layoutX="5.0" layoutY="5.0" onMouseClicked="#addStudentsSelect" prefHeight="212.0" prefWidth="669.0">
+                                      <columns>
+                                        <TableColumn fx:id="addStudents_col_studentNum" prefWidth="59.60003662109375" text="Student #" />
+                                        <TableColumn fx:id="addStudents_col_year" prefWidth="78.79998779296875" text="Year" />
+                                          <TableColumn fx:id="addStudents_col_course" prefWidth="72.4000244140625" text="Course" />
+                                          <TableColumn fx:id="addStudents_col_firstName" prefWidth="110.79995727539062" text="First Name" />
+                                          <TableColumn fx:id="addStudents_col_lastName" prefWidth="89.20001220703125" text="Last Name" />
+                                          <TableColumn fx:id="addStudents_col_gender" prefWidth="64.0" text="Gender" />
+                                          <TableColumn fx:id="addStudents_col_birthdate" prefWidth="90.00006103515625" text="Birth Date" />
+                                          <TableColumn fx:id="addStudents_col_status" prefWidth="100.0" text="Status" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="availableCourse_form" layoutX="23.0" layoutY="22.0" prefHeight="502.8" prefWidth="689.2" stylesheets="@application.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="6.0" layoutY="6.0" prefHeight="487.0" prefWidth="254.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="24.0" text="Course: " />
+                                    <TextField fx:id="availableCourse_course" layoutX="91.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" styleClass="textfield" />
+                                    <Label layoutX="14.0" layoutY="62.0" text="Description:" />
+                                    <TextField fx:id="availableCourse_description" layoutX="91.0" layoutY="58.0" prefHeight="25.0" prefWidth="156.0" styleClass="textfield" />
+                                    <Label layoutX="14.0" layoutY="95.0" text="Degree:" />
+                                    <TextField fx:id="availableCourse_degree" layoutX="92.0" layoutY="91.0" prefHeight="25.0" prefWidth="155.0" styleClass="textfield" />
+                                    <Button fx:id="availableCourse_addBtn" layoutX="51.0" layoutY="152.0" mnemonicParsing="false" onAction="#availableCourseAdd" prefHeight="26.0" prefWidth="48.0" styleClass="delete-btn" text="Add" />
+                                    <Button fx:id="availableCourse_updateBtn" layoutX="150.0" layoutY="152.0" mnemonicParsing="false" onAction="#availableCourseUpdate" styleClass="delete-btn" text="Update" />
+                                    <Button fx:id="availableCourse_clearBtn" layoutX="51.0" layoutY="200.0" mnemonicParsing="false" onAction="#availableCourseClear" styleClass="delete-btn" text="Clear" />
+                                    <Button fx:id="availableCourse_deleteBtn" layoutX="150.0" layoutY="198.0" mnemonicParsing="false" onAction="#availableCourseDelete" prefHeight="26.0" prefWidth="68.0" styleClass="delete-btn" text="Delete" />
+                                    <Button fx:id="availableCourse_downloadBtn" layoutX="51.0" layoutY="246.0" mnemonicParsing="false" onAction="#generateCoursePDF" prefHeight="26.0" prefWidth="165.0" styleClass="delete-btn" text="Download" />
+                                    </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="269.0" layoutY="2.0" prefHeight="499.0" prefWidth="415.0">
+                                 <children>
+                                    <TableView fx:id="availableCourse_tableView" layoutX="8.0" layoutY="7.0" onMouseClicked="#availableCourseSelect" prefHeight="489.0" prefWidth="405.0">
+                                      <columns>
+                                        <TableColumn fx:id="availableCourse_col_course" prefWidth="114.80001831054688" text="Course" />
+                                        <TableColumn fx:id="availableCourse_col_description" prefWidth="158.39996337890625" text="Description" />
+                                          <TableColumn fx:id="availableCourse_col_degree" prefWidth="130.79998779296875" text="Degree" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="studentGrade_form" layoutX="91.0" layoutY="51.0" prefHeight="502.8" prefWidth="689.2" stylesheets="@application.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="8.0" layoutY="6.0" prefHeight="492.0" prefWidth="212.0" stylesheets="@application.css">
+                                 <children>
+                                    <TextField fx:id="studentGrade_studentNum" layoutX="87.0" layoutY="26.0" prefHeight="25.0" prefWidth="118.0" styleClass="textfield" stylesheets="@application.css" editable="false"/>
+                                    <Label layoutX="14.0" layoutY="30.0" stylesheets="@application.css" text="Student #:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="studentGrade_year" layoutX="85.0" layoutY="66.0" prefHeight="25.0" prefWidth="118.0" styleClass="textfield" stylesheets="@application.css" editable="false"/>
+                                    <Label layoutX="46.0" layoutY="69.0" stylesheets="@application.css" text="Year:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="studentGrade_course" layoutX="85.0" layoutY="100.0" prefHeight="25.0" prefWidth="118.0" styleClass="textfield" stylesheets="@application.css" editable="false"/>
+                                    <Label layoutX="28.0" layoutY="103.0" stylesheets="@application.css" text="Course::">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="studentGrade_firstsem" layoutX="85.0" layoutY="136.0" prefHeight="25.0" prefWidth="118.0" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="18.0" layoutY="139.0" prefHeight="20.0" prefWidth="70.0" stylesheets="@application.css" text="First Sem:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="studentGrade_secondsem" layoutX="87.0" layoutY="172.0" prefHeight="25.0" prefWidth="118.0" styleClass="textfield" stylesheets="@application.css" />
+                                    <Label layoutX="5.0" layoutY="175.0" prefHeight="20.0" prefWidth="79.0" stylesheets="@application.css" text="Second Sem:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="studentGrade_clearBtn" layoutX="27.0" layoutY="221.0" mnemonicParsing="false" onAction="#studentGradesClear" text="Clear" visible="false" />
+                                    <Button fx:id="studentGrade_updateBtn" layoutX="114.0" layoutY="221.0" mnemonicParsing="false" onAction="#studentGradesUpdate" styleClass="delete-btn" text="Update" />
+                                    <Button fx:id="studentGrade_downloadBtn" layoutX="107.0" layoutY="258.0" mnemonicParsing="false" onAction="#studentGradesDownload" styleClass="delete-btn" text="Download" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="239.0" layoutY="8.0" prefHeight="492.0" prefWidth="445.0" stylesheets="@application.css">
+                                 <children>
+                                    <TableView fx:id="studentGrade_tableView" layoutX="6.0" layoutY="3.0" onMouseClicked="#studentGradesSelect" prefHeight="480.0" prefWidth="434.0">
+                                      <columns>
+                                        <TableColumn fx:id="studentGrade_col_studentNum" prefWidth="75.0" text="Student #" />
+                                        <TableColumn fx:id="studentGrade_col_year" prefWidth="62.0" text="Year" />
+                                          <TableColumn fx:id="studentGrade_col_course" prefWidth="75.60003662109375" text="Course" />
+                                          <TableColumn fx:id="studentGrade_col_firstsem" prefWidth="64.00006103515625" text="First Sem" />
+                                          <TableColumn fx:id="studentGrade_col_secondsem" prefWidth="84.0" text="Second Sem" />
+                                          <TableColumn fx:id="studentGrade_col_final" prefWidth="91.2000732421875" text="Final" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

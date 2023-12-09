@@ -1,0 +1,156 @@
+/* JavaFX CSS - Leave this comment until you have at least created one rule which uses -fx-Property */
+
+.top-form {
+    -fx-background-color: #573A28; /* Brown */
+    -fx-border-color: #000;
+    -fx-border-width: 0.4px 0 0.2px 0.4px;
+}
+
+.semi-top-form {
+    -fx-background-color: #F2F2F2; /* Light Gray */
+    -fx-border-color: #000;
+    -fx-border-width: 0.2px 0.4px 0.4px 0.4px;
+}
+
+.close, .minimize {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.close:hover {
+    -fx-background-color: #FB3D63; /* Light Red */
+}
+
+.minimize:hover {
+    -fx-background-color: #DDD; /* Light Gray */
+}
+
+.nav-form {
+    -fx-background-color: linear-gradient(to bottom right, #1B1464, #2E2259); /* Purple Gradient */
+}
+
+.nav-btn, .logout {
+    -fx-cursor: hand;
+    -fx-background-radius: 10px;
+}
+
+.logout:hover {
+    -fx-background-color: #FFF; /* White */
+}
+
+.white-bg {
+    -fx-background-color: #F8F8F8; /* Light Gray */
+    -fx-background-radius: 8px;
+}
+
+.card {
+    -fx-background-color: linear-gradient(to right, #394240, #344682); /* Blue Gradient */
+    -fx-background-radius: 4px;
+}
+
+.search {
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to bottom right, #1B1464, #2E2259); /* Purple Gradient */
+    -fx-border-width: 0.8px;
+    -fx-border-radius: 8px;
+    -fx-font-family: "Tahoma";
+    -fx-font-size: 14px;
+    -fx-padding: 0 0 0 28px;
+}
+
+.search:focused {
+    -fx-border-width: 1.8px;
+}
+
+.shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.4), 6, 0, 0, 0);
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: linear-gradient(to bottom right, #1B1464, #2E2259); /* Purple Gradient */
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom right, #1B1464, #2E2259); /* Purple Gradient */
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-background-inset: 0;
+}
+
+.table-view .column-header, .filter {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #FFF; /* White */
+    -fx-font-family: "Arial";
+}
+
+.table-view .table-column {
+    -fx-alignment: center;
+}
+
+.textfield {
+    -fx-background-color: linear-gradient(to bottom, #F2F2F2, #EEE); /* Light Gray Gradient */
+    -fx-background-radius: 4px;
+    -fx-border-color: linear-gradient(to bottom right, #1B1464, #2E2259); /* Purple Gradient */
+    -fx-border-width: 0.8px;
+    -fx-border-radius: 4px;
+    -fx-font-family: "Tahoma";
+}
+
+.textfield:focused {
+    -fx-background-color: #FFF; /* White */
+    -fx-border-width: 1px;
+}
+
+.insert-btn, .add-btn, .update-btn, .delete-btn, .clear-btn {
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-font-family: "Arial";
+}
+
+.insert-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: red;
+}
+
+.add-btn {
+    -fx-background-color: #2D5278; /* Dark Blue */
+    -fx-text-fill: #FFF; /* White */
+}
+
+.add-btn:hover {
+    -fx-background-color: #2268AE; /* Light Blue */
+}
+
+.update-btn {
+    -fx-background-color: #2D7755; /* Green */
+    -fx-text-fill: #FFF; /* White */
+}
+
+.update-btn:hover {
+    -fx-background-color: #22AD72; /* Light Green */
+}
+
+.delete-btn {
+    -fx-background-color: #90242F; /* Dark Red */
+    -fx-text-fill: #FFF; /* White */
+}
+
+.delete-btn:hover {
+    -fx-background-color: #C51F32; /* Light Red */
+}
+
+.clear-btn {
+    -fx-background-color: #6E2275; /* Purple */
+    -fx-text-fill: #FFF; /* White */
+}
+
+.clear-btn:hover {
+    -fx-background-color: #AE21AC; /* Light Purple */
+}

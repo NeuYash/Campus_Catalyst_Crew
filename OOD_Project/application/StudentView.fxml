@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StudnetController">
+   <children>
+      <AnchorPane fx:id="main_form" maxWidth="-Infinity" prefHeight="568.0" prefWidth="1005.0">
+         <children>
+            <BorderPane prefHeight="568.0" prefWidth="893.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="65.0" prefWidth="893.0" styleClass="semi-top-form" stylesheets="@application.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="0.4" layoutY="5.2" prefHeight="63.0" prefWidth="892.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <FontAwesomeIconView glyphName="GRADUATION_CAP" layoutX="28.0" layoutY="42.0" size="2em" />
+                              <Label layoutX="69.0" layoutY="19.0" text="University Management  ">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="839.0" layoutY="16.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="40.0" styleClass="close" stylesheets="@application.css">
+                                 <graphic>
+                                    <FontAwesomeIconView fx:id="close" glyphName="CLOSE" selectionEnd="0" />
+                                 </graphic></Button>
+                              <Button layoutX="780.0" layoutY="16.0" mnemonicParsing="false" onAction="#minimize" prefHeight="26.0" prefWidth="27.0" styleClass="minimize" stylesheets="@application.css">
+                                 <graphic>
+                                    <FontAwesomeIconView fx:id="minimize" glyphName="MINUS" text="" wrappingWidth="23.828596115112305" />
+                                 </graphic></Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="521.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="502.0" prefWidth="203.0" styleClass="nav-form" stylesheets="@application.css">
+                           <children>
+                              <Button fx:id="logout" layoutX="33.0" layoutY="442.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="140.0" styleClass="logout" stylesheets="@application.css" text="Logout" />
+                              <FontAwesomeIconView glyphName="SIGN_OUT" layoutX="41.0" layoutY="458.0" wrappingWidth="22.342869758605957" />
+                              <Button fx:id="studentGrade_btn" layoutX="33.0" layoutY="279.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="25.0" prefWidth="140.0" styleClass="nav-btn" stylesheets="@application.css" text="Grades " />
+                              <Button fx:id="studentTranscript_downloadBtn" layoutX="32.0" layoutY="327.0" mnemonicParsing="false" onAction="#generateTranscriptPDF" prefHeight="25.0" prefWidth="140.0" styleClass="nav-btn" stylesheets="@application.css" text="Download Transcript" />
+                              <Button fx:id="addStudents_btn" layoutX="32.0" layoutY="183.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="25.0" prefWidth="140.0" styleClass="nav-btn" stylesheets="@application.css" text="View Students" />
+                              <Separator layoutY="163.0" prefHeight="3.0" prefWidth="200.0" />
+                              <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="72.0" layoutY="86.0" size="7em" />
+                              <Label fx:id="username" layoutX="85.0" layoutY="121.0" prefHeight="23.0" prefWidth="100.0" text="Admin" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="60.0" layoutY="98.0" stylesheets="@application.css" text="Welcome" textFill="WHITE">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="availablecourses_btn" layoutX="34.0" layoutY="231.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="25.0" prefWidth="140.0" styleClass="nav-btn" stylesheets="@application.css" text="Available courses" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="520.0" prefWidth="690.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane fx:id="addStudents_form" focusTraversable="true" layoutX="119.0" layoutY="101.0" prefHeight="502.8" prefWidth="689.2" styleClass="white-bg" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="482.0" prefWidth="666.0" />
+                              <AnchorPane layoutX="4.0" layoutY="3.0" prefHeight="25.0" prefWidth="116.0">
+                                 <children>
+                                    <TableView fx:id="addStudents_tableView" layoutX="16.0" layoutY="57.0" prefHeight="384.0" prefWidth="658.0" stylesheets="@application.css">
+                                      <columns>
+                                        <TableColumn fx:id="addStudents_col_year" prefWidth="106.00006484985352" text="Year" />
+                                          <TableColumn fx:id="addStudents_col_course" prefWidth="65.199951171875" text="Course" />
+                                          <TableColumn fx:id="addStudents_col_firstName" prefWidth="185.9999542236328" text="First Name" />
+                                          <TableColumn fx:id="addStudents_col_lastName" prefWidth="170.800048828125" text="Last Name" />
+                                          <TableColumn fx:id="addStudents_col_status" prefWidth="128.800048828125" text="Status" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="availableCourse_form" layoutX="23.0" layoutY="22.0" prefHeight="502.8" prefWidth="689.2" styleClass="white-bg" stylesheets="@application.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="269.0" layoutY="2.0" prefHeight="499.0" prefWidth="415.0">
+                                 <children>
+                                    <TableView fx:id="availableCourse_tableView" layoutX="-216.0" layoutY="7.0" prefHeight="499.0" prefWidth="631.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-216.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="availableCourse_col_course" prefWidth="174.39996337890625" text="Course" />
+                                        <TableColumn fx:id="availableCourse_col_description" prefWidth="251.59999084472656" text="Description" />
+                                          <TableColumn fx:id="availableCourse_col_degree" prefWidth="204.0" text="Degree" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="studentGrade_form" layoutX="91.0" layoutY="51.0" prefHeight="502.8" prefWidth="689.2" styleClass="white-bg" stylesheets="@application.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane layoutX="239.0" layoutY="8.0" prefHeight="492.0" prefWidth="445.0">
+                                 <children>
+                                    <TableView fx:id="studentGrade_tableView" layoutX="-219.0" layoutY="2.0" prefHeight="481.0" prefWidth="659.0">
+                                      <columns>
+                                        <TableColumn fx:id="studentGrade_col_studentNum" prefWidth="75.0" text="Student #" />
+                                        <TableColumn fx:id="studentGrade_col_year" prefWidth="128.79998779296875" text="Year" />
+                                          <TableColumn fx:id="studentGrade_col_course" prefWidth="64.00001525878906" text="Course" />
+                                          <TableColumn fx:id="studentGrade_col_firstsem" prefWidth="121.5999755859375" text="First Sem" />
+                                          <TableColumn fx:id="studentGrade_col_secondsem" prefWidth="138.800048828125" text="Second Sem" />
+                                          <TableColumn fx:id="studentGrade_col_final" prefWidth="124.7999267578125" text="Final" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
